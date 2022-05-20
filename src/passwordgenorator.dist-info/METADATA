@@ -1,0 +1,10 @@
+Metadata-Version: 2.1
+Briefcase-Version: 0.3.6
+Name: passwordgenorator
+Formal-Name: Password Genorator
+App-ID: com.example.passwordgenorator
+Version: 0.0.1
+Home-page: https://example.com/passwordgenorator
+Author: zippy-boy
+Author-email: zippy-boy@outlook.com
+Summary: Creates a surcure password

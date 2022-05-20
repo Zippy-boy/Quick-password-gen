@@ -1,0 +1,54 @@
+[tool.briefcase]
+project_name = "Password Genorator"
+bundle = "com.example"
+version = "0.0.1"
+url = "https://example.com/passwordgenorator"
+license = "MIT license"
+author = 'zippy-boy'
+author_email = "zippy-boy@outlook.com"
+
+[tool.briefcase.app.passwordgenorator]
+formal_name = "Password Genorator"
+description = "Creates a surcure password"
+icon = "src/passwordgenorator/resources/passwordgenorator"
+sources = ['src/passwordgenorator']
+requires = [
+    'pandas',
+    'QtPy'
+]
+
+
+[tool.briefcase.app.passwordgenorator.macOS]
+requires = [
+    'toga-cocoa>=0.3.0.dev32',
+    'std-nslog==1.0.0'
+]
+
+[tool.briefcase.app.passwordgenorator.linux]
+requires = [
+    'toga-gtk>=0.3.0.dev32',
+]
+system_requires = [
+    'libgirepository1.0-dev',
+    'libcairo2-dev',
+    'libpango1.0-dev',
+    'libwebkitgtk-3.0-0',
+    'gir1.2-webkit-3.0',
+]
+
+[tool.briefcase.app.passwordgenorator.windows]
+requires = [
+    'toga-winforms>=0.3.0.dev32',
+]
+
+# Mobile deployments
+[tool.briefcase.app.passwordgenorator.iOS]
+requires = [
+    'toga-iOS>=0.3.0.dev32',
+    'std-nslog==1.0.0'
+]
+
+[tool.briefcase.app.passwordgenorator.android]
+requires = [
+    'toga-android>=0.3.0.dev32'
+]
