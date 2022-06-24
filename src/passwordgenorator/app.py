@@ -6,6 +6,7 @@ from toga.style import Pack
 from toga.style.pack import COLUMN, ROW
 import random
 import pandas as pd
+import os
 
 
 class PasswordGenorator(toga.App):
@@ -46,9 +47,6 @@ class PasswordGenorator(toga.App):
             file.write(self.password.value)
             file.close()
 
-
-
-
     def startup(self):
         """
         Construct and show the Toga application.
@@ -65,13 +63,13 @@ class PasswordGenorator(toga.App):
         # create a label title in the top center of the screen
         title = toga.Label('Password Generator', style=Pack(padding_top=10, alignment="top", text_align="center", font_size=20))
         # create a number input field for the length of the password
-        numbers_l = toga.Label('How long: ', style=Pack(flex=0.1, font_size=16, padding_top=9))
-        self.length_input = toga.NumberInput(style=Pack(flex=0.9, font_size=16, padding_top=9, padding_left=6), max_value=200, min_value=1)
+        numbers_l = toga.Label('How long: ', style=Pack(flex=3, font_size=16, padding_top=9))
+        self.length_input = toga.NumberInput(style=Pack(flex=10, font_size=16, padding_top=9, padding_left=6), max_value=200, min_value=1)
         # create some radio buttons for the type of password E.G (numbers, letters, symbols)
-        o_label = toga.Label('Options: ', style=Pack(flex=0.01, font_size=16, padding_top=10))
-        self.numbers = toga.Switch(label='Numbers', style=Pack(padding_top=10, flex=0.25, font_size=16))
-        self.caps = toga.Switch(label='Letters', style=Pack(padding_top=10, flex=0.25, font_size=16))
-        self.symbols = toga.Switch(label='Symbols', style=Pack(padding_top=10, flex=0.25, font_size=16))
+        o_label = toga.Label('Options: ', style=Pack(flex=1, font_size=16, padding_top=10))
+        self.numbers = toga.Switch(label='Numbers', style=Pack(padding_top=10, flex=1, font_size=16))
+        self.caps = toga.Switch(label='Letters', style=Pack(padding_top=10, flex=1, font_size=16))
+        self.symbols = toga.Switch(label='Symbols', style=Pack(padding_top=10, flex=1, font_size=16))
         # create a button to generate the password
         generate = toga.Button('Generate', style=Pack(padding_top=10, flex=0.5, font_size=16), on_press=self.generate_password)
         # create a text input field to display the password
